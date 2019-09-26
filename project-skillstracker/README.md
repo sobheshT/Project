@@ -6,11 +6,11 @@ The Academic Manager wants a single page application to keep track of skills of 
  
 • **Search Associate:** 
 
-John will be able to search associate with following criteria: 
-○ Search by associate name 
-○ Search by associate ID 
-○ Search by Email ID 
-○ Search by Mobile Number 
+John will be able to search associate with following criteria: <br>
+○ Search by associate name <br>
+○ Search by associate ID <br>
+○ Search by Email ID <br>
+○ Search by Mobile Number <br>
 ○ Search by Strong Skills 
  
 ● **Add new Associate:** 
