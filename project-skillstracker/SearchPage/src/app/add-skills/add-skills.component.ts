@@ -350,7 +350,7 @@ export class AddSkillsComponent implements OnInit {
     if(this.arr1.length == 0)
     {
       this.router.navigateByUrl('/', {skipLocationChange: true}).then(()=>
-      this.router.navigate(['/searchPage/star',this.id]));
+      this.router.navigate(['/star',this.id]));
       
       const config: ScrollToConfigOptions = {
         target: 'destination'

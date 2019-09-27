@@ -1,1 +1,133 @@
-<h1>hsaoidhdsahjshsajkiukjsabkj</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>home</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <style>
+    /* Set height of the grid so .sidenav can be 100% (adjust if needed) */
+    .row.content {height: 1500px}
+    
+    /* Set gray background color and 100% height */
+    .sidenav {
+      background-color: #f1f1f1;
+      height: 100%;
+    }
+    
+    /* Set black background color, white text and some padding */
+    footer {
+      background-color: #555;
+      color: white;
+      padding: 15px;
+    }
+    
+    /* On small screens, set height to 'auto' for sidenav and grid */
+    @media screen and (max-width: 767px) {
+      .sidenav {
+        height: auto;
+        padding: 15px;
+      }
+      .row.content {height: auto;} 
+    }
+  </style>
+</head>
+<body>
+        <nav class="navbar navbar-expand-lg  navbar-dark bg-primary">
+
+                <span class="navbar-brand mb-0 h1">
+                <img src="assets/logo.png" style="width: 200px">
+                </span>
+                <!-- Links--> 
+                     <ul class="navbar-nav ml-auto ">
+                                  <li class="nav-item active ">
+                                    <a class="nav-link text-dark font-weight-bold" routerLink="/home">Home</a>
+                                  </li>
+                    
+                                  <li class="nav-item">
+                                        <a class="nav-link text-dark font-weight-bold" routerLink="/loginPage" >
+                                            SignIn
+                                          </a>                     
+                                  </li>                        
+                                  
+                    </ul>
+                    </nav>
+<div class="container-fluid">
+  <div class="row content">
+    <div class="col-sm-3 sidenav" style="height: 70vh;">
+      <h4>SkillHunt</h4>
+      <img src="assets/skill.jpg" class="img-fluid" alt="Responsive image"><br>
+      <div class="accordion" id="accordionExample">
+            <div class="card">
+              <div class="card-header" id="headingOne">
+                <h2 class="mb-0">
+                  <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#AboutUs" aria-expanded="true" aria-controls="collapseOne">
+                    ABOUT US
+                  </button>
+                </h2>
+              </div>
+          
+              <div id="AboutUs" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                <div class="card-body">
+                        Skill Tracker is a platform that enables employees to track their progress . 
+                        It ultimately shifts the burden of managing skill progress away,
+                        track and take ownership of their journey through Skill development.         
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-header" id="headingTwo">
+                <h2 class="mb-0">
+                  <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#ContactUs" aria-expanded="false" aria-controls="collapseTwo">
+                    CONTACT US
+                  </button>
+                </h2>
+              </div>
+              <div id="ContactUs" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                <div class="card-body">
+                        info@skilltracker.com<br>
+                        +91 9009786545<br>        
+                </div>
+              </div>
+            </div>
+        </div>
+    </div>
+  
+    <div class="col-sm-6">
+            <div class="card" style="width: 80rem;">
+                    <img src="assets/developer.gif" class="card-img-top" alt="Responsive image" style="height: 400px" >
+                    <div class="card-body">
+                      <h2 class="card-title">Skill Trackers for Employees</h2>
+                      <h4 class="card-text">Make sure you are getting the best from your apprentices and trainees.<br>
+                        A high performing employee delivers:
+                            Better value for your business<br>
+                            Someone you can trust<br>
+                            An asset to the industry.</h4>
+                
+                    </div>
+            </div> 
+      </div> 
+      <div class="col-sm-3">
+
+          <img src="https://upload.wikimedia.org/wikipedia/en/thumb/4/43/Feed-icon.svg/1200px-Feed-icon.svg.png" width="20px" height="20px"> <b>RSS Feed from World Health Oranization</b><br>
+          <div style="overflow-y: scroll;border-left: 1px solid black; height: 70vh; padding:10px;">
+              <div *ngFor="let feed of feeds">
+                  <h3>{{feed.title}}</h3>
+                  <h4>{{feed.author}}-{{feed.pubDate | date:'dd-MM-yyyy'}}</h4>
+                  <P style="text-align: justify; margin-right:20px;"><em>{{feed.description | stripHtmlTags}}</em></P>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+</body>
+</html>
+
+
+
+
+
+
+

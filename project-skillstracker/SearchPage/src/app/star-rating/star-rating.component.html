@@ -1,3 +1,24 @@
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+<script src="node_modules/chart.js/src/chart.js"></script>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <div class="view" style="background-image: url('assets/bg.jpg'); 
+  background-repeat: no-repeat; background-size: cover; background-position: center ;height: 200vh;width: 100%">
+      
+  
+<div style="display: block; height: 50px; text-align:center; line-height:50px; background:blue">
+  <span id="ctl_txt" ><b>PROFILE</b></span>
+  <button type="button" style="float: right;height:50px" routerLink="/searchPage">Search</button> 
+</div>
+
+
 
 <div class="container-fluid supreme-container" id="main">
     <div class="row">
@@ -15,11 +36,11 @@
             </div>
             
         </div>--> 
-    
+     
     <div class="col-md-4" id="centerDiv">
-                <div class="container-fluid" id="table1">          
-                        <table class="table" >   
-                        <tr><td>Id:</td><td>{{inputId}}</td></tr>                 
+                <div class="container-fluid" id="table1">         
+                        <table class="table">   
+                        <tr><td>ID:</td><td>{{inputId}}</td></tr>                 
                         <tr><td>Name:</td><td>{{inputName}}<td></tr>
                         <tr><td>Email</td><td>{{inputEmail}}</td></tr>
                         <tr><td>Mobile:</td><td>{{inputMobile}}</td></tr>
@@ -82,12 +103,12 @@
                                 </ng-template>
                     </div>
             </div>
-            
+            <br><br><br><br><br><br>
         <div class="col-md-6" id="rightDiv">
             <div class="responsive" id="pieCh">
                 
-                <h4>Skills Experience
-                  </h4>
+                <h6><b>Skills Experience</b>
+                  </h6>
               <canvas baseChart
                       [data]="pieChartData"
                       [labels]="pieChartLabels"
@@ -180,4 +201,6 @@
         <div id="addDestination">
           <router-outlet></router-outlet>
         </div>
-        
+        </div>
+  </div>
+        </html>

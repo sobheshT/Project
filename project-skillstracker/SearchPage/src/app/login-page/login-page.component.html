@@ -23,13 +23,13 @@
 		}
 		
         .bg1{
-            background-color: rgba(0, 0, 0, 0.8);
+            background-color: rgba(0, 87, 87, 0.8);
         }
 </style>
  <nav class="navbar navbar-expand-lg  navbar-dark bg-primary">
 
-    <span class="navbar-brand mb-0 h1">
-       <b> Skill Tracker</b>
+    <span class="navbar-brand" >
+    <img src="assets/logo.png" style="width: 200px;">
     </span>
     <!-- Links--> 
          <ul class="navbar-nav ml-auto ">
@@ -38,7 +38,7 @@
                       </li>
         
                       <li class="nav-item">
-                            <a class="nav-link text-dark font-weight-bold" routerLink="/login" >
+                            <a class="nav-link text-dark font-weight-bold" routerLink="/loginPage" >
                                 SignIn
                               </a>                     
                       </li>                        
@@ -53,9 +53,11 @@
 
 
 <div class="container user_card " style="justify-content: center; display: flex; margin-top:5% ; margin-right: 33%;width: 30%">
-      <form name="form" [formGroup]="form">
+     
+      
+    <form name="form" [formGroup]="form">
                     <div class="form-group">
-                        <label style="color: cornflowerblue" class="col-form-label col-form-label-lg" for="proId">Email :</label>
+                        <label style="color:rgb(199, 203, 209)" class="col-form-label col-form-label-lg" for="proId">Email :</label>
     
                         <input id="uname" name="userName" formControlName="uname" [(ngModel)]="userEmail" required minlength="4" type="email" class="form-control form-control-lg" [ngClass]="{'is-invalid' : form.get('uname').touched && form.get('uname').invalid}" />
     
@@ -66,7 +68,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label style="color: cornflowerblue" class="col-form-label col-form-label-lg" for="proId">Password :</label>
+                        <label style="color: rgb(199, 203, 209)" class="col-form-label col-form-label-lg" for="proId">Password :</label>
     
                         <input id="upassword" name="userPassword" formControlName="upassword" [(ngModel)]="userPassword" required minlength="8" type="password" class="form-control form-control-lg" [ngClass]="{'is-invalid' : form.get('upassword').touched && form.get('upassword').invalid}"
                         />
@@ -78,9 +80,9 @@
                     <input class="btn btn-success" type="submit" value="Submit" (click)="checkEmail(userEmail, userPassword)">
     
                 </form>
-                <br><br>
+                <br>
                 <div>
-                    <button  class="btn btn-link" type="button" (click)="openModal()"><h5>Forgot Password?</h5></button><br>
+                    <button  class="btn btn-link" type="button" (click)="openModal()" style="color: red"><h6>Forgot Password?</h6></button>
                     <button  class="btn btn-link" type="button" (click)="openReg()"><h5>New User?  Register Here</h5></button>
                 </div>
               

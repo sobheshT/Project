@@ -46,6 +46,7 @@ img
 {
     line-height: 55px;
     font-size: 25px;
+    border:1px;
 }
 #bottomBox{
     display: inline-block;

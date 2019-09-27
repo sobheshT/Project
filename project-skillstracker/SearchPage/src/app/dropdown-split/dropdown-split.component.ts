@@ -23,7 +23,7 @@ export class DropdownSplitComponent implements OnInit {
   tempskills:any[] = [];
   associateSkills:any[]=[];
   associateId:any;
-  selectedOption : string = 'Search Associate By';
+  selectedOption : string = 'Name';
   searchOn : string;
   sortBy: string = 'Sort By';
   sortFlag :boolean = true;
@@ -112,7 +112,7 @@ upload()
     console.log("button clicked for: "+id);
     this.ser.associateId = id;
     this.associateSearched.length = 0;
-    this.router.navigate(['/searchPage/star',id]);
+    this.router.navigate(['/star',id]);
     const config: ScrollToConfigOptions = {
       target: 'destination'
     };
@@ -140,7 +140,7 @@ upload()
     }
   ,options).subscribe(data  => {console.log("PUT Request is successful ", data); 
   this.router.navigateByUrl('/', {skipLocationChange: true}).then(()=>
-  this.router.navigate(['/searchPage/star',this.assId,'displaySkills',this.assId]));
+  this.router.navigate(['/star',this.assId,'displaySkills',this.assId]));
   const config: ScrollToConfigOptions = {
     target: 'addDestination'
   };

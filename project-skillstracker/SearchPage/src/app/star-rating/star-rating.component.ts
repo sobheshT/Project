@@ -195,7 +195,7 @@ upload()
   addSkills()
   {
     
-    this.router.navigate(['/searchPage/star',this.associateId,'displaySkills',this.associateId]);
+    this.router.navigate(['/star',this.associateId,'displaySkills',this.associateId]);
     const config: ScrollToConfigOptions = {
       target: 'addDestination'
     };
@@ -222,7 +222,7 @@ upload()
     }
   ,options).subscribe(data  => {console.log("PUT Request is successful ", data); 
   this.router.navigateByUrl('/', {skipLocationChange: true}).then(()=>
-  this.router.navigate(['/searchPage/star',this.associateId]));
+  this.router.navigate(['/star',this.associateId]));
   const config: ScrollToConfigOptions = {
     target: 'destination'
   };
@@ -289,7 +289,7 @@ upload()
     
     this.httpObj.delete("http://localhost:8088/deleteAssociateSkill/"+srNo).subscribe(data  => {console.log("PUT Request is successful ", data);
     this.router.navigateByUrl('/', {skipLocationChange: true}).then(()=>
-  this.router.navigate(['/searchPage/star',this.associateId]));
+  this.router.navigate(['/star',this.associateId]));
   const config: ScrollToConfigOptions = {
     target: 'destination'
   };
@@ -380,7 +380,7 @@ upload()
     }
   ,options).subscribe(data  => {console.log("PUT Request is successful ", data);
   this.router.navigateByUrl('/', {skipLocationChange: true}).then(()=>
-  this.router.navigate(['/searchPage/star',this.associateId]));
+  this.router.navigate(['/star',this.associateId]));
   const config: ScrollToConfigOptions = {
     target: 'destination'
   };

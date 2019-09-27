@@ -28,8 +28,9 @@ const routes: Routes = [
   {
     path: 'searchPage', 
     component: DropdownSplitComponent,
-    children : [
-      {
+    pathMatch:'full'
+  },
+ {
         path: 'star/:id',
         component: StarRatingComponent,
         children: [
@@ -39,9 +40,9 @@ const routes: Routes = [
           }
         ]
 
-      }
-    ]
-  },
+      },
+    
+  
   {path: '', redirectTo: '/loginPage', pathMatch: 'full'},
   
 ];
