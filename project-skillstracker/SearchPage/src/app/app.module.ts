@@ -22,6 +22,7 @@ import {MatButtonModule} from '@angular/material/button';
 import { ScrollToService, ScrollToConfigOptions, ScrollToModule } from '@nicky-lenaers/ngx-scroll-to';
 import { HomeComponent } from 'src/app/home/home.component';
 import { StripHtmlTagsPipe } from './pipe/strip-html-tags.pipe';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,6 +33,7 @@ import { StripHtmlTagsPipe } from './pipe/strip-html-tags.pipe';
     ModalTestComponent,
     SkillsInputComponent,
     AddSkillsComponent,
+
     StripHtmlTagsPipe,
     HomeComponent,
     AddSkillsToAssociateComponent,

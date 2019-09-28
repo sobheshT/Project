@@ -36,6 +36,7 @@ export class DropdownSplitComponent implements OnInit {
   temp:number;
   enableSearch : boolean = true;
   searchPlaceholder :string = 'Search Associate';
+  sorta:string;
   test:any;
   skill:any;
   display= 'none';
@@ -335,13 +336,13 @@ openModal(){
   selectedSort()
   {
     
-    if(this.selectedOption == 'Id')
+    if(this.sorta == 'Id')
       this.associateSearched = this.sortByKey(this.associateSearched, 'associateId');
-    if(this.selectedOption == 'Name')
+    if(this.sorta == 'Name')
       this.associateSearched = this.sortByKey(this.associateSearched, 'associateName'); 
-    if(this.selectedOption == 'Email')
+    if(this.sorta == 'Email')
       this.associateSearched = this.sortByKey(this.associateSearched, 'associateEmail');
-    if(this.selectedOption == 'Mobile')
+    if(this.sorta == 'Mobile')
       this.associateSearched = this.sortByKey(this.associateSearched, 'associateMobile');     
     
   }
@@ -392,44 +393,50 @@ openModal(){
       return ((x < y) ? -1 : ((x > y) ? 1 : 0));
     });
   }
-  selected(option :string)
-  {
-    this.selectedOption = option;
+  selectedsort(stk : string){
+    this.sorta=stk;
     this.sortFlag = true;
     this.enableSearch = true;
-   if(this.selectedOption == 'Id')
+    if(this.sorta == 'Id')
     {
       this.searchPlaceholder = 'Search Associate By ID';
       this.sortBy = 'Sort Associate ID';
       this.sortOn = [];
     }
-    if(this.selectedOption == 'Name')
+    if(this.sorta == 'Name')
     {
   
       this.searchPlaceholder = 'Search Associate By Name';
       this.sortBy = 'Sort Associate'
       this.sortOn = [];
     }
-    if(this.selectedOption == 'Email')
+    if(this.sorta == 'Email')
     {
   
       this.searchPlaceholder = 'Search Associate By Email';
       this.sortBy = 'Sort Associate Email';
       this.sortOn = [];
     }
-    if(this.selectedOption == 'Mobile')
+    if(this.sorta == 'Mobile')
     {
       
       this.searchPlaceholder = 'Search Associate By Mobile';
       this.sortBy = 'Sort Associate Mobile ';
       this.sortOn = [];
     }
-    if(this.selectedOption == 'Skill Name')
+    if(this.sorta == 'Skill Name')
     {
       this.searchPlaceholder = 'Search Associate By Skill Name';
       this.sortBy = 'Sort Associate Skills By';
       this.sortOn = ['Expirience', 'Certification' , 'Rating'];
     }
+  }
+  selected(option :string)
+  {
+    this.selectedOption = option;
+    this.sortFlag = true;
+    this.enableSearch = true;
+  
     console.log("button click");
     
     this.inputEl.nativeElement.focus();

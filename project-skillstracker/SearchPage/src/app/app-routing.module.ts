@@ -6,7 +6,9 @@ import { AddSkillsToAssociateComponent } from './add-skills-to-associate/add-ski
 import { LoginPageComponent } from './login-page/login-page.component';
 import { AddSkillsComponent } from './add-skills/add-skills.component';
 import {HomeComponent} from './home/home.component';
+
 import { from } from 'rxjs';
+
 const routes: Routes = [
   // {
   //   path: 'star/:id',
@@ -20,6 +22,9 @@ const routes: Routes = [
     component: LoginPageComponent,
     pathMatch:'full'
   },
+  
+  
+
   {
     path:'home',
     component:HomeComponent,
