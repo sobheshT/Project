@@ -10,7 +10,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import { DropdownSplitComponent } from './dropdown-split/dropdown-split.component';
 import { CardsDemoComponent } from './cards-demo/cards-demo.component';
-import { SaveEverythingComponent } from './save-everything/save-everything.component';
+
 import { StarRatingComponent } from './star-rating/star-rating.component';
 import {ChartsModule} from 'ng2-charts';
 import { ModalTestComponent } from './modal-test/modal-test.component';
@@ -28,7 +28,7 @@ import { StripHtmlTagsPipe } from './pipe/strip-html-tags.pipe';
     AppComponent,
     DropdownSplitComponent,
     CardsDemoComponent,
-    SaveEverythingComponent,
+  
     StarRatingComponent,
     ModalTestComponent,
     SkillsInputComponent,

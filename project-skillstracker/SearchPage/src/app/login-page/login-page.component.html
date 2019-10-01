@@ -6,10 +6,10 @@
 <style>
 .user_card {
 			height: 400px;
-			width: 200px;
+			width: 400px;
 			margin-top: auto;
 			margin-bottom: auto;
-			background: rgba(0, 0, 0, 0.5);
+			background: rgba(0, 0, 0, 0.8);
 			position: relative;
 			display: flex;
 			justify-content: center;
@@ -23,36 +23,40 @@
 		}
 		
         .bg1{
-            background-color: rgba(0, 87, 87, 0.8);
+            background-image: url('assets/loop.gif');
+            background-repeat: no-repeat; 
+            background-size: cover; 
+            background-position: center ;
+            height: 100%;width: 100%;
         }
 </style>
- <nav class="navbar navbar-expand-lg  navbar-dark bg-primary">
+ <nav class="navbar navbar-expand-lg  navbar-dark bg-dark " style="position: relative; width: 100%">
 
     <span class="navbar-brand" >
-    <img src="assets/logo.png" style="width: 200px;">
+    <img src="assets/logo.png" style="width: 100px;">
     </span>
     <!-- Links--> 
          <ul class="navbar-nav ml-auto ">
                       <li class="nav-item active ">
-                        <a class="nav-link text-dark font-weight-bold" routerLink="/home">Home</a>
+                        <a class="nav-link text-danger font-weight-bold" routerLink="/home" >Home</a>
                       </li>
         
                       <li class="nav-item">
-                            <a class="nav-link text-dark font-weight-bold" routerLink="/loginPage" >
+                            <a class="nav-link text-danger font-weight-bold" routerLink="/loginPage" >
                                 SignIn
                               </a>                     
                       </li>                        
                       
         </ul>
         </nav>
-<div class="row bg1 " style="height: 100vh">
+<div class="container-fluid row bg1 " style="height: 100vh">
    
 
 
             
 
 
-<div class="container user_card " style="justify-content: center; display: flex; margin-top:5% ; margin-right: 33%;width: 30%">
+ <div class="container user_card " style="justify-content: center; display: flex; margin-top:10% ; margin-left: 35.3%;margin-right: auto;width: auto;position: relative">
      
       
     <form name="form" [formGroup]="form">
@@ -142,12 +146,12 @@
                 <div class="modal-body">
     
                     <form name="form2" [formGroup]="form2">
-                        <div class="span12 text-center">
+                        <div class="span12 text-center text-light" >
                             Question : {{secques}}
                         </div>
                         <hr>
                         <div class="form-group">
-                            <label for="exampleInputEmail2">Security Answer</label>
+                            <label for="exampleInputEmail2 "><h4 style="color: aliceblue">Security Answer</h4></label>
                             <input type="text" class="form-control" [(ngModel)]="secAnswer" id="fc2" placeholder="Enter Security Answer" formControlName="secanswer" [ngClass]="{'is-invalid' : form2.get('secanswer').touched && form2.get('secanswer').invalid}" />
                             <div *ngIf="form2.get('secanswer').touched && form2.get('secanswer').invalid" class="invalid-feedback">
                                 <div class="alert alert-danger" *ngIf="form2.get('secanswer').errors.required">*Security Answer is Required</div>
@@ -184,7 +188,7 @@
     
                     <form name="form4" [formGroup]="form4">
                         <div class="form-group">
-                            <label for="exampleInputEmail4">Enter Password</label>
+                            <label for="exampleInputEmail4"><h6 style="color: aliceblue">Enter Password</h6></label>
                             <input type="password" class="form-control" [(ngModel)]="setPass" id="fc7" placeholder="Enter New Password" formControlName="setpass" [ngClass]="{'is-invalid' : form4.get('setpass').touched && form4.get('setpass').invalid}" />
                             <div *ngIf="form4.get('setpass').touched && form4.get('setpass').invalid" class="invalid-feedback">
                                 <div class="alert alert-danger" *ngIf="form4.get('setpass').errors.required">*New Password is required</div>
@@ -194,7 +198,7 @@
                         </div>
     
                         <div class="form-group">
-                            <label for="exampleInputEmail5">Confirm Your Password</label>
+                            <label for="exampleInputEmail5"><h6 style="color: aliceblue">Confirm Your Password</h6></label>
                             <input type="password" class="form-control" [(ngModel)]="setAgainPass" id="fc8" placeholder="Confirm Your Password" formControlName="setagainpass" [ngClass]="{'is-invalid' : form4.get('setagainpass').touched && form4.get('setagainpass').invalid}" />
                             <div *ngIf="form4.get('setagainpass').touched && form4.get('setagainpass').invalid" class="invalid-feedback">
                                 <div class="alert alert-danger" *ngIf="form4.get('setagainpass').errors.required">*New Password is required</div>
@@ -305,4 +309,6 @@
                 </div>
             </div>
         </div>
+    
+       
         </html>

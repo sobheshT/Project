@@ -16,7 +16,11 @@ const routes: Routes = [
   //   pathMatch:'full'
   // },
   
-  
+  {
+    path:'home',
+    component:HomeComponent,
+    pathMatch:'full'
+  },
   {
     path: 'loginPage', 
     component: LoginPageComponent,
@@ -25,11 +29,7 @@ const routes: Routes = [
   
   
 
-  {
-    path:'home',
-    component:HomeComponent,
-    pathMatch:'full'
-  },
+  
   {
     path: 'searchPage', 
     component: DropdownSplitComponent,
@@ -48,7 +48,7 @@ const routes: Routes = [
       },
     
   
-  {path: '', redirectTo: '/loginPage', pathMatch: 'full'},
+  {path: '', redirectTo: '/home', pathMatch: 'full'},
   
 ];
 

@@ -45,6 +45,7 @@ export class StarRatingComponent implements OnInit {
   public pieChartLabels:string[]=[];
    public pieChartData:number[]=[];
    public pieChartType:string = 'pie';
+   public message="Skills deleted...";
    public pieChartColors: Array < any > = [{
     backgroundColor: ['#f5a9cf', '#91a8eb', '#84e8d6','#eddc8e','#91eda8','#e0555c','#e6663c','rgba(148,159,177,0.2)'],
  }];
@@ -148,6 +149,11 @@ export class StarRatingComponent implements OnInit {
   ngOnInit() 
   {
     
+  }
+  logout()
+  {
+    this.router.navigate(['/loginPage']);
+    localStorage.clear();
   }
 
   selectFile(event) 
@@ -286,7 +292,8 @@ upload()
   deleteSkill(srNo:any)
   {
     console.log(srNo);
-    
+    console.log("deleted");
+    if (!confirm('Are you sure?')) return false;
     this.httpObj.delete("http://localhost:8088/deleteAssociateSkill/"+srNo).subscribe(data  => {console.log("PUT Request is successful ", data);
     this.router.navigateByUrl('/', {skipLocationChange: true}).then(()=>
   this.router.navigate(['/star',this.associateId]));

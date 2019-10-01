@@ -7,7 +7,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { FileUploadService } from '../file-upload.service';
 import { ScrollToConfigOptions, ScrollToService } from '@nicky-lenaers/ngx-scroll-to';
 import {LOCAL_STORAGE, WebStorageService} from 'angular-webstorage-service';
-import { LoginPageComponent } from '../login-page/login-page.component';
+
 
 @Component({
   selector: 'app-dropdown-split',
@@ -56,6 +56,7 @@ assMobile:number;
 assImage:string;
 selectedFiles: FileList;
 currentFileUpload: File;
+url1 : any
 
 selectFile(event) 
 {
@@ -66,7 +67,11 @@ upload()
     this.currentFileUpload = this.selectedFiles.item(0);
     console.log("File name: "+ this.selectedFiles.item(0).name);
     this.assImage="http://127.0.0.1:8887/"+this.selectedFiles.item(0).name;
-     this.uploadService.pushFileToStorage(this.currentFileUpload).subscribe(event => {
+    console.log(this.assImage);
+    this.url1= `C:/Users/B4ibmjava30/Documents/project-skillstracker/SkillsTracker/ProfilePictureStore/${this.selectedFiles.item(0).name}`
+    this.url1.split('/').join('s');
+    console.log(this.url1);
+    this.uploadService.pushFileToStorage(this.currentFileUpload).subscribe(event => {
      if (event instanceof HttpResponse) {
         console.log('File is completely uploaded!');       
       }
@@ -99,6 +104,7 @@ upload()
   }
 
   ngOnInit() {
+    window.history.forward();
   }
 
   form = new FormGroup({
@@ -106,7 +112,7 @@ upload()
     assName: new FormControl('',[Validators.required, Validators.pattern(this.namePattern)]),
     assEmail : new FormControl('',[Validators.required, Validators.email]),
     assMobile : new FormControl('',[Validators.required,Validators.pattern(this.mobilePattern)]),
-    assImage : new FormControl('')
+    url1 : new FormControl('')
   })
   viewAssociate(id: string)
   {
@@ -136,7 +142,7 @@ upload()
       "associateId": this.assId,
       "associateName": this.assName,
       "associateEmail": this.assEmail,
-      "associateImage": this.assImage,
+      "associateImage": this.url1,
       "associateMobile": this.assMobile
     }
   ,options).subscribe(data  => {console.log("PUT Request is successful ", data); 
@@ -152,6 +158,7 @@ upload()
 
   togglePhotoPreview(){
     this.previewPhoto = !this.previewPhoto;
+    console.log(this.url1);
   }
    
 openModal(){

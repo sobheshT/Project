@@ -22,21 +22,13 @@
 
 <div class="container-fluid supreme-container" id="main">
     <div class="row">
-      <!--   <div class="col-md-2" id="leftDiv">
-             <div class="container-fluid" id="rightBox">
-                 <div id="dispImg" >
-                            <img  src={{inputImage}} class="img-responsive img-thumbnail">
-                    </div><br><br>
-                    <div>
-                        <label>
-                            <input type="file" (change)="selectFile($event)">
-                        </label>
-                        <button class="btn btn-success" [disabled]="!selectedFiles" (click)="upload()">Update Profile Picture</button>
-                    </div>
-            </div>
+        
+      <div style=" position: fixed; bottom: 80px; right: 30px;">
+        <button type="button" style="border-radius: 40px;" (click)="logout()" class="btn btn-outline-success">Logout</button>
+    </div>
             
-        </div>--> 
-     
+            
+
     <div class="col-md-4" id="centerDiv">
                 <div class="container-fluid" id="table1">         
                         <table class="table">   

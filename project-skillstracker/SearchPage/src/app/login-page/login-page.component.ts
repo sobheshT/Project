@@ -50,6 +50,7 @@ export class LoginPageComponent implements OnInit {
   })
 
   ngOnInit() {
+    window.history.forward();
   }
 
   onSubmit(params)
@@ -171,6 +172,7 @@ export class LoginPageComponent implements OnInit {
     else 
     {
           console.log("Wrong: " + " " + this.secAnswer);
+          alert("Incorrect Security Answer");
     }
   }
 
@@ -202,6 +204,7 @@ export class LoginPageComponent implements OnInit {
     else
     {
       console.log("wrong: " + this.setPass + " does not matched with " + this.setAgainPass);
+      alert("Password does not matched");
     }
   }
 
