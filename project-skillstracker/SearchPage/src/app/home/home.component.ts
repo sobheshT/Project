@@ -16,7 +16,7 @@ import { map } from 'rxjs/operators';
 
 
 export class HomeComponent implements OnInit{
-   
+  display = "none";
     private feedUrl: string = 'https://www.who.int/rss-feeds/news-english.xml';
   private rssToJsonServiceBaseUrl: string = 'https://rss2json.com/api.json?rss_url='
 private feed:any;
@@ -27,7 +27,13 @@ constructor(private http: HttpClient) { }
 this.refreshFeed();
 
 }
-
+openModal(){
+  this.display = "block";
+}
+onClose()
+  {
+    this.display = "none";
+  }
 
 refreshFeed() {
     // Adds 1s of delay to provide user's feedback.
