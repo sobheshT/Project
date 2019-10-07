@@ -23,6 +23,7 @@ export class StarRatingComponent implements OnInit {
   index:number;
   totalDuration:number=0;
   closeResult: string;
+  body : string;
   inputId : string;
   inputEmail : string;
   inputName : string;
@@ -248,6 +249,33 @@ upload()
       this.saveUpdate();
       this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
     });
+  }
+  sendMail()
+  {
+    let httpHeaders = new HttpHeaders({
+      'Content-Type' : 'application/json',
+      'Cache-Control': 'no-cache'});
+    
+      let options = {
+        headers: httpHeaders};
+        console.log(this.inputId + this.inputName + "  body  "+ this.body + this.inputEmail + this.inputMobile + this.inputImage );
+     
+        if(this.body == undefined)
+        {
+          this.body = "welcome";
+        }
+
+        console.log(this.body);
+        alert("Mail Sent Successfully!!!");
+        this.httpObj.post("http://localhost:8088/send-mail",
+        {
+          "message" : this.body,
+          "mail" : this.inputEmail
+     }
+  ,options).subscribe(data  => {console.log("PUT Request is successful ", data); 
+
+})
+  error  => {console.log("Error", error);}
   }
   
   openDelete(content) {

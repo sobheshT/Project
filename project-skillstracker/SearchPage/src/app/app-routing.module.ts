@@ -8,6 +8,9 @@ import { AddSkillsComponent } from './add-skills/add-skills.component';
 import {HomeComponent} from './home/home.component';
 
 import { from } from 'rxjs';
+import { SearchEmpComponent } from './search-emp/search-emp.component';
+import { MailComponent } from './mail/mail.component';
+import { PasswordComponent } from './password/password.component';
 
 const routes: Routes = [
   // {
@@ -26,9 +29,22 @@ const routes: Routes = [
     component: LoginPageComponent,
     pathMatch:'full'
   },
+  {
+    path: 'passwordPage', 
+    component: PasswordComponent,
+    pathMatch:'full'
+  },
   
-  
-
+  {
+    path:'mailPage',
+    component:MailComponent,
+    pathMatch:'full'
+  },
+  {
+    path: 'searchEmp', 
+    component: SearchEmpComponent,
+    pathMatch:'full'
+  },
   
   {
     path: 'searchPage', 

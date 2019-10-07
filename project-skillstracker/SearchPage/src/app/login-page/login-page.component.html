@@ -95,10 +95,85 @@
         </div>
     </div>
   
-					
-    
-    
+			    
     <!-- forgot password -->
+    <div class="modal " id="forgotModal" tabindex="-1" role="dialog" [ngStyle]="{'display':display}">
+        <div class="modal-dialog modal-xl" id="dialog1">
+            <div class="modal-content" id="content1">
+                <div class="modal-header" id="header1">
+                    <h5 class="modal-title">
+                        Forgot Password?
+                    </h5>
+                    <button class="close" data-dismiss="modal" (click)="onClose()">&times;</button>
+                </div><br>
+                <div class="modal-body">
+    
+                    <form name="form1" [formGroup]="form1">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1" style="color: aliceblue">Email address</label>
+                            <input type="email" class="form-control" [(ngModel)]="verEmail" id="fc1" placeholder="Enter Email Address" formControlName="vername" [ngClass]="{'is-invalid' : form1.get('vername').touched && form1.get('vername').invalid}" />
+                            <div *ngIf="form1.get('vername').touched && form1.get('vername').invalid" class="invalid-feedback">
+                                <div class="alert alert-danger" *ngIf="form1.get('vername').errors.required">*Email is required</div>
+                                <div class="alert alert-danger" *ngIf="form1.get('vername').errors.pattern">*Email must be a valid email address
+                                </div>
+                            </div>
+                            
+                        </div>
+    
+                        <div>
+                            <input type="submit" value="Verify" class="btn btn-success" (click)="verifyEmail(verEmail)">
+                        </div>
+                        <br>
+                        <br>
+                        <br><br><br><br><br><br>
+                        
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="modal" id="forgotModal1" tabindex="-1" role="dialog" [ngStyle]="{'display':display1}">
+        <div class="modal-dialog modal-xl" id="dialog2">
+            <div class="modal-content" id="content2">
+                <div class="modal-header" id="header2">
+                    <h5 class="modal-title">
+                        Security Information
+                    </h5>
+                    <button class="close" data-dismiss="modal" (click)="onClose1()">&times;</button>
+                </div><br>
+                <div class="modal-body">
+    
+                    <form name="form2" [formGroup]="form2">
+                        <div class="span12 text-center" style="color: aliceblue">
+                            Question : {{secques}}
+                        </div>
+                        <hr>
+                        <div class="form-group">
+                            <label for="exampleInputEmail2" style="color: aliceblue">Security Answer</label>
+                            <input type="text" class="form-control" [(ngModel)]="secAnswer" id="fc2" placeholder="Enter Security Answer" formControlName="secanswer" [ngClass]="{'is-invalid' : form2.get('secanswer').touched && form2.get('secanswer').invalid}" />
+                            <div *ngIf="form2.get('secanswer').touched && form2.get('secanswer').invalid" class="invalid-feedback">
+                                <div class="alert alert-danger" *ngIf="form2.get('secanswer').errors.required">*Security Answer is Required</div>
+                                <div class="alert alert-danger" *ngIf="form2.get('secanswer').errors.pattern">*Security Answer must be in valid Format
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div>
+                            <input type="submit" value="Verify" class="btn btn-success" (click)="checkAnswer()"><br><br>
+                            <input type="button" value="Send link to Mail" class="btn btn-success" (click)="sendMail()">
+                        </div>
+                        <br>
+                        <br>
+                        <br><br><br><br><br><br>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>		
+    
+    
+    <!-- forgot password 
     <div class="modal " id="forgotModal" tabindex="-1" role="dialog" [ngStyle]="{'display':display}">
         <div class="modal-dialog modal-xl" id="dialog1">
             <div class="modal-content" id="content1">
@@ -170,7 +245,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div>-->
     
     
     
